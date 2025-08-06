@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KK Butchery - Premium Quality Meats</title>
+    <meta name="description" content="KK Butchery - Premium quality fresh meats with online ordering and delivery. Browse our selection of beef, chicken, lamb, pork and processed meats.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2><i class="fas fa-cut"></i> KK Butchery</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#blog" class="nav-link">Blog</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Search products...">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    <button class="cart-btn" onclick="toggleCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                    <button class="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="cart-close" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: R<span id="cartTotal">0.00</span></strong>
+            </div>
+            <button class="checkout-btn" onclick="proceedToCheckout()">
+                <i class="fas fa-credit-card"></i> Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Premium Quality Meats</h1>
+            <p>Fresh, locally sourced meats delivered to your doorstep</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="scrollToProducts()">Shop Now</button>
+                <button class="btn-secondary" onclick="scrollToAbout()">Learn More</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=600&h=400&fit=crop" alt="Premium Meat Display">
+        </div>
+    </section>
+
+    <!-- Weekly Specials -->
+    <section class="specials">
+        <div class="container">
+            <h2>Weekly Specials</h2>
+            <div class="specials-grid" id="specialsGrid">
+                <!-- Specials will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Our Products</h2>
+            
+            <!-- Category Filter -->
+            <div class="category-filter">
+                <button class="filter-btn active" data-category="all">All Products</button>
+                <button class="filter-btn" data-category="beef">Beef</button>
+                <button class="filter-btn" data-category="chicken">Chicken</button>
+                <button class="filter-btn" data-category="lamb">Lamb</button>
+                <button class="filter-btn" data-category="pork">Pork</button>
+                <button class="filter-btn" data-category="processed">Processed Meats</button>
+                <button class="filter-btn" data-category="combo">Combo Deals</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About KK Butchery</h2>
+                    <p>Since our establishment, KK Butchery has been committed to providing the finest quality meats to our community. We source our products from trusted local farmers who share our commitment to ethical and sustainable farming practices.</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature">
+                            <i class="fas fa-certificate"></i>
+                            <h3>Premium Quality</h3>
+                            <p>Hand-selected, grade A meats from trusted suppliers</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <h3>Fresh & Natural</h3>
+                            <p>No artificial preservatives, just natural goodness</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-truck"></i>
+                            <h3>Fast Delivery</h3>
+                            <p>Same-day delivery available within our service area</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Hygiene Standards</h3>
+                            <p>HACCP certified with the highest hygiene standards</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500&h=600&fit=crop" alt="Butcher at work">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"The best quality meat I've ever purchased. Always fresh and perfectly cut to my specifications."</p>
+                    <div class="customer">
+                        <strong>Sarah Johnson</strong>
+                        <span>Regular Customer</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Excellent service and delivery is always on time. The online ordering system is so convenient."</p>
+                    <div class="customer">
+                        <strong>Michael Chen</strong>
+                        <span>Online Customer</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Family-owned business with genuine care for quality. Highly recommend their combo deals!"</p>
+                    <div class="customer">
+                        <strong>Lisa Thompson</strong>
+                        <span>Family Customer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2>Recipes & Tips</h2>
+            <div class="blog-grid">
+                <article class="blog-post">
+                    <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&h=250&fit=crop" alt="Perfect Steak">
+                    <div class="blog-content">
+                        <h3>How to Cook the Perfect Steak</h3>
+                        <p>Learn the secrets to achieving restaurant-quality steaks at home with our expert tips.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+                <article class="blog-post">
+                    <img src="https://images.unsplash.com/photo-1602536942166-eb0e5905a769?w=400&h=250&fit=crop" alt="Lamb Recipes">
+                    <div class="blog-content">
+                        <h3>5 Delicious Lamb Recipes</h3>
+                        <p>Discover mouth-watering lamb dishes perfect for family dinners and special occasions.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+                <article class="blog-post">
+                    <img src="https://images.unsplash.com/photo-1588347818111-4c8190711a39?w=400&h=250&fit=crop" alt="Meat Storage">
+                    <div class="blog-content">
+                        <h3>Proper Meat Storage Tips</h3>
+                        <p>Essential guidelines for storing different types of meat to maintain freshness and quality.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>123 Butcher Street<br>Cape Town, Western Cape 8001</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+27 21 123 4567</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@kkbutchery.co.za</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Operating Hours</h3>
+                            <p>Mon-Fri: 7:00 AM - 6:00 PM<br>
+                               Sat: 8:00 AM - 4:00 PM<br>
+                               Sun: 9:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Full Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email Address</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone">
+                        <label for="phone">Phone Number</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="subject" name="subject" required>
+                            <option value="">Select Subject</option>
+                            <option value="order">Order Inquiry</option>
+                            <option value="delivery">Delivery Question</option>
+                            <option value="product">Product Information</option>
+                            <option value="complaint">Complaint</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for weekly specials and cooking tips</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-cut"></i> KK Butchery</h3>
+                    <p>Your trusted source for premium quality meats since establishment. We're committed to providing the best products and service to our valued customers.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#products">Fresh Beef</a></li>
+                        <li><a href="#products">Premium Chicken</a></li>
+                        <li><a href="#products">Lamb Cuts</a></li>
+                        <li><a href="#products">Pork Selection</a></li>
+                        <li><a href="#products">Processed Meats</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Butcher Street, Cape Town</p>
+                        <p><i class="fas fa-phone"></i> +27 21 123 4567</p>
+                        <p><i class="fas fa-envelope"></i> info@kkbutchery.co.za</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KK Butchery. All rights reserved. | Developed by SM Solutions</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Checkout</h2>
+                <button class="modal-close" onclick="closeCheckoutModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content" id="checkoutContent">
+                <!-- Checkout form will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast">
+        <span class="toast-message"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
