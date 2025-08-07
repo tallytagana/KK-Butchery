@@ -806,7 +806,7 @@ function handleContactForm(e) {
         showToast('Message sent successfully! We will get back to you soon.', 'success');
         getElement('#contactForm').reset();
         
-        // In a real application, this would send data to the server
+        // this would send data to the server
         console.log('Contact Form Data:', formData);
     }, 1500);
 }
