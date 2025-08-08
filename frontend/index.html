@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KK Butchery - Premium Quality Meats</title>
-    <meta name="description" content="KK Butchery - Premium quality fresh meats with online ordering and delivery. Browse our selection of beef, chicken, lamb, pork and processed meats.">
+    <meta name="description" content="KK Butchery - Traditional butchery since 1978 in New Brighton, Mbizweni Square. Premium quality fresh meats with online ordering and delivery.">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
@@ -15,17 +16,18 @@
             <div class="nav-container">
                 <div class="nav-logo">
                     <h2><i class="fas fa-cut"></i> KK Butchery</h2>
+                    <span class="logo-tagline">Since 1978</span>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="#home" class="nav-link">Home</a></li>
                     <li><a href="#products" class="nav-link">Products</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
-                    <li><a href="#blog" class="nav-link">Blog</a></li>
+                    <li><a href="#blog" class="nav-link">Recipes</a></li>
                 </ul>
                 <div class="nav-icons">
                     <div class="search-container">
-                        <input type="text" id="searchInput" placeholder="Search products...">
+                        <input type="text" id="searchInput" placeholder="Search premium meats...">
                         <i class="fas fa-search search-icon"></i>
                     </div>
                     <button class="cart-btn" onclick="toggleCart()">
@@ -45,20 +47,20 @@
     <!-- Shopping Cart Sidebar -->
     <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
-            <h3>Shopping Cart</h3>
+            <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
             <button class="cart-close" onclick="toggleCart()">
                 <i class="fas fa-times"></i>
             </button>
         </div>
         <div class="cart-items" id="cartItems">
-            <p class="empty-cart">Your cart is empty</p>
+            <p class="empty-cart"><i class="fas fa-shopping-cart"></i><br>Your cart is empty</p>
         </div>
         <div class="cart-footer">
             <div class="cart-total">
                 <strong>Total: R<span id="cartTotal">0.00</span></strong>
             </div>
             <button class="checkout-btn" onclick="proceedToCheckout()">
-                <i class="fas fa-credit-card"></i> Checkout
+                <i class="fas fa-credit-card"></i> Secure Checkout
             </button>
         </div>
     </div>
@@ -68,43 +70,116 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Premium Quality Meats</h1>
-            <p>Fresh, locally sourced meats delivered to your doorstep</p>
-            <div class="hero-buttons">
-                <button class="btn-primary" onclick="scrollToProducts()">Shop Now</button>
-                <button class="btn-secondary" onclick="scrollToAbout()">Learn More</button>
-            </div>
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
         </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=600&h=400&fit=crop" alt="Premium Meat Display">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Traditional Butchery Since 1978</h1>
+                <p>Premium quality, locally sourced meats from the heart of New Brighton, Mbizweni Square. Experience the difference of traditional butchery methods and expert craftsmanship.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">47</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Fresh Quality</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5★</span>
+                        <span class="stat-label">Customer Rating</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToProducts()">
+                        <i class="fas fa-shopping-basket"></i> Shop Premium Cuts
+                    </button>
+                    <button class="btn-secondary" onclick="scrollToAbout()">
+                        <i class="fas fa-history"></i> Our Heritage
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-card">
+                    <img src="/img/paras-kapoor-obrAaJAFXuw-unsplash.jpg" alt="Premium Meat Display - Fresh Cuts" loading="eager">
+                    <div class="image-badge">
+                        <i class="fas fa-certificate"></i>
+                        <span>Premium Grade</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Weekly Specials -->
     <section class="specials">
         <div class="container">
-            <h2>Weekly Specials</h2>
+            <div class="section-header">
+                <h2><i class="fas fa-fire"></i> Weekly Specials</h2>
+                <p>Limited time offers on our finest selections</p>
+            </div>
             <div class="specials-grid" id="specialsGrid">
                 <!-- Specials will be populated by JavaScript -->
             </div>
         </div>
     </section>
 
+    <!-- Quality Assurance Banner -->
+    <div class="quality-banner">
+        <div class="container">
+            <div class="quality-items">
+                <div class="quality-item">
+                    <i class="fas fa-leaf"></i>
+                    <span>Locally Sourced</span>
+                </div>
+                <div class="quality-item">
+                    <i class="fas fa-snowflake"></i>
+                    <span>Aged to Perfection</span>
+                </div>
+                <div class="quality-item">
+                    <i class="fas fa-truck"></i>
+                    <span>Fresh Delivery</span>
+                </div>
+                <div class="quality-item">
+                    <i class="fas fa-award"></i>
+                    <span>Premium Grade</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Products Section -->
     <section id="products" class="products">
         <div class="container">
-            <h2>Our Products</h2>
+            <div class="section-header">
+                <h2><i class="fas fa-meat"></i> Our Premium Selection</h2>
+                <p>Hand-selected cuts from the finest sources</p>
+            </div>
             
             <!-- Category Filter -->
             <div class="category-filter">
-                <button class="filter-btn active" data-category="all">All Products</button>
-                <button class="filter-btn" data-category="beef">Beef</button>
-                <button class="filter-btn" data-category="chicken">Chicken</button>
-                <button class="filter-btn" data-category="lamb">Lamb</button>
-                <button class="filter-btn" data-category="pork">Pork</button>
-                <button class="filter-btn" data-category="processed">Processed Meats</button>
-                <button class="filter-btn" data-category="combo">Combo Deals</button>
+                <button class="filter-btn active" data-category="all">
+                    <i class="fas fa-th-large"></i> All Products
+                </button>
+                <button class="filter-btn" data-category="beef">
+                    <i class="fas fa-cow"></i> Premium Beef
+                </button>
+                <button class="filter-btn" data-category="chicken">
+                    <i class="fas fa-drumstick-bite"></i> Farm Chicken
+                </button>
+                <button class="filter-btn" data-category="lamb">
+                    <i class="fas fa-sheep"></i> Fresh Lamb
+                </button>
+                <button class="filter-btn" data-category="pork">
+                    <i class="fas fa-pig"></i> Quality Pork
+                </button>
+                <button class="filter-btn" data-category="processed">
+                    <i class="fas fa-sausage"></i> Artisan Meats
+                </button>
+                <button class="filter-btn" data-category="combo">
+                    <i class="fas fa-box"></i> Value Packs
+                </button>
             </div>
 
             <!-- Products Grid -->
@@ -119,34 +194,126 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>About KK Butchery</h2>
-                    <p>Since our establishment, KK Butchery has been committed to providing the finest quality meats to our community. We source our products from trusted local farmers who share our commitment to ethical and sustainable farming practices.</p>
+                    <div class="section-header">
+                        <h2><i class="fas fa-heart"></i> About KK Butchery</h2>
+                        <p>A legacy of quality that spans generations</p>
+                    </div>
                     
-                    <div class="features-grid">
-                        <div class="feature">
-                            <i class="fas fa-certificate"></i>
-                            <h3>Premium Quality</h3>
-                            <p>Hand-selected, grade A meats from trusted suppliers</p>
+                    <div class="about-story">
+                        <h3>Who Are We?</h3>
+                        <p>We are a traditional butchery based in the heart of New Brighton in Mbizweni Square, a central business district for the locals. KK Butchery is continuing a long tradition of your local corner butchery since 1978. We are pleased to be one of the independent retailers that make Mbizweni Square such an attractive and vibrant community.</p>
+                        
+                        <p>As a local shop we can be responsive and attentive to our customers' specific needs in a way that is not possible for a large supermarket or chain. Our commitment to quality and personal service has made us a trusted name in the community for over four decades.</p>
+                    </div>
+
+                    <div class="vision-mission">
+                        <div class="vision">
+                            <div class="vm-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3>Our Vision</h3>
+                            <p>To be the leading traditional butchery in the Eastern Cape, known for our exceptional quality, personalized service, and commitment to our community.</p>
                         </div>
-                        <div class="feature">
-                            <i class="fas fa-leaf"></i>
-                            <h3>Fresh & Natural</h3>
-                            <p>No artificial preservatives, just natural goodness</p>
+                        <div class="mission">
+                            <div class="vm-icon">
+                                <i class="fas fa-target"></i>
+                            </div>
+                            <h3>Our Mission</h3>
+                            <p>To provide our customers with the finest quality meats through traditional butchery methods, expert knowledge, and personalized service that exceeds expectations.</p>
                         </div>
-                        <div class="feature">
-                            <i class="fas fa-truck"></i>
-                            <h3>Fast Delivery</h3>
-                            <p>Same-day delivery available within our service area</p>
+                    </div>
+
+                    <div class="why-us">
+                        <h3>Why Choose KK Butchery?</h3>
+                        <div class="why-us-grid">
+                            <div class="reason">
+                                <i class="fas fa-cut"></i>
+                                <h4>Expert Craftsmanship</h4>
+                                <p>With many years of butchery experience and skills we can offer our customers a full range of cuts and trims. We work with the whole animal so we can offer a wide selection.</p>
+                            </div>
+                            <div class="reason">
+                                <i class="fas fa-clock"></i>
+                                <h4>Traditional Aging</h4>
+                                <p>Traditional butchers allow ageing and storing of meat before it is sold. KK Butchery uses ageing to improve the final flavour and tenderness of our meat.</p>
+                            </div>
+                            <div class="reason">
+                                <i class="fas fa-eye"></i>
+                                <h4>Complete Transparency</h4>
+                                <p>You can see the product and watch it being prepared. Nothing is hidden and you can ask questions and get advice at the same time.</p>
+                            </div>
+                            <div class="reason">
+                                <i class="fas fa-shield-alt"></i>
+                                <h4>Quality Assurance</h4>
+                                <p>In recent years consumers have been worried by mystery meat scandals. If you want certainty about what's on your plate, we can tell you in detail.</p>
+                            </div>
                         </div>
-                        <div class="feature">
-                            <i class="fas fa-shield-alt"></i>
-                            <h3>Hygiene Standards</h3>
-                            <p>HACCP certified with the highest hygiene standards</p>
+                    </div>
+
+                    <div class="our-promise">
+                        <h3>Our Promise to You</h3>
+                        <div class="promise-grid">
+                            <div class="promise-item">
+                                <i class="fas fa-star"></i>
+                                <h4>High Standards</h4>
+                                <p>We pride ourselves on providing a personal, friendly and consistently high-quality service. We readily give advice on cuts and preparation.</p>
+                            </div>
+                            <div class="promise-item">
+                                <i class="fas fa-hand-holding-heart"></i>
+                                <h4>Quality Service</h4>
+                                <p>For online orders, each is carefully prepared to your specification by an expert and hand-packaged, before being delivered to your doorstep.</p>
+                            </div>
+                            <div class="promise-item">
+                                <i class="fas fa-flag"></i>
+                                <h4>South African Pride</h4>
+                                <p>At KK Butchery we like to keep it South African wherever possible. With your support, we've succeeded in maintaining the highest standards.</p>
+                            </div>
+                            <div class="promise-item">
+                                <i class="fas fa-ear-listen"></i>
+                                <h4>We Listen to You</h4>
+                                <p>Your feedback and needs drive our continuous improvement. We're always here to serve you better and exceed your expectations.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="our-services">
+                        <h3>Our Catering Services</h3>
+                        <div class="services-grid">
+                            <div class="service-item">
+                                <i class="fas fa-birthday-cake"></i>
+                                <h4>Birthday Celebrations</h4>
+                                <p>We cater for birthday celebrations wherever the occasion is celebrated. Let us make your special day memorable.</p>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-users"></i>
+                                <h4>Family Reunions</h4>
+                                <p>Allow us to handle all your braai needs while you catch up with family and enjoy those special moments.</p>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-heart"></i>
+                                <h4>Private Getaway</h4>
+                                <p>We will cater even for a special getaway just for two. Special moments are not too small for us.</p>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-handshake"></i>
+                                <h4>Team Building</h4>
+                                <p>We cater for team building sessions. Whether you want to relax or be involved with preparation, we accommodate both.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500&h=600&fit=crop" alt="Butcher at work">
+                    <div class="image-stack">
+                        <div class="main-image">
+                            <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=500&h=600&fit=crop&q=80" alt="Traditional Butcher at Work">
+                            <div class="image-overlay">
+                                <span>Traditional Craftsmanship</span>
+                            </div>
+                        </div>
+                        <div class="accent-image">
+                            <img src="https://images.unsplash.com/photo-1588347818111-4c8190711a39?w=300&h=300&fit=crop&q=80" alt="Premium Meat Selection">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -155,48 +322,72 @@
     <!-- Testimonials Section -->
     <section class="testimonials">
         <div class="container">
-            <h2>What Our Customers Say</h2>
+            <div class="section-header">
+                <h2><i class="fas fa-quote-left"></i> What Our Customers Say</h2>
+                <p>Trusted by the community for over 45 years</p>
+            </div>
             <div class="testimonials-grid">
                 <div class="testimonial">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Been coming here since the 80s. The quality and personal service you get from KK Butchery is unmatched. They know exactly what I need for my family gatherings."</p>
                     </div>
-                    <p>"The best quality meat I've ever purchased. Always fresh and perfectly cut to my specifications."</p>
                     <div class="customer">
-                        <strong>Sarah Johnson</strong>
-                        <span>Regular Customer</span>
+                        <div class="customer-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="customer-info">
+                            <strong>Sarah Johnson</strong>
+                            <span>Long-time Customer</span>
+                        </div>
                     </div>
                 </div>
                 <div class="testimonial">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The difference in taste is incredible! You can really tell the meat is properly aged. The ribeye steaks are restaurant quality. Worth every rand."</p>
                     </div>
-                    <p>"Excellent service and delivery is always on time. The online ordering system is so convenient."</p>
                     <div class="customer">
-                        <strong>Michael Chen</strong>
-                        <span>Online Customer</span>
+                        <div class="customer-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="customer-info">
+                            <strong>Michael Chen</strong>
+                            <span>Regular Customer</span>
+                        </div>
                     </div>
                 </div>
                 <div class="testimonial">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Local business that truly cares. They cut exactly what I need - no waste, great value. This is how butchery should be! Supporting local has never felt so good."</p>
                     </div>
-                    <p>"Family-owned business with genuine care for quality. Highly recommend their combo deals!"</p>
                     <div class="customer">
-                        <strong>Lisa Thompson</strong>
-                        <span>Family Customer</span>
+                        <div class="customer-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="customer-info">
+                            <strong>Lisa Thompson</strong>
+                            <span>Community Member</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -206,30 +397,54 @@
     <!-- Blog Section -->
     <section id="blog" class="blog">
         <div class="container">
-            <h2>Recipes & Tips</h2>
+            <div class="section-header">
+                <h2><i class="fas fa-utensils"></i> Recipes & Expert Tips</h2>
+                <p>Master the art of cooking with our professional guidance</p>
+            </div>
             <div class="blog-grid">
                 <article class="blog-post">
-                    <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&h=250&fit=crop" alt="Perfect Steak">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&h=280&fit=crop&q=80" alt="Perfect Grilled Steak">
+                        <div class="blog-category">Cooking Tips</div>
+                    </div>
                     <div class="blog-content">
                         <h3>How to Cook the Perfect Steak</h3>
-                        <p>Learn the secrets to achieving restaurant-quality steaks at home with our expert tips.</p>
-                        <a href="#" class="read-more">Read More</a>
+                        <p>Learn the professional secrets to achieving restaurant-quality steaks at home using our properly aged beef cuts and traditional techniques.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-clock"></i> 5 min read</span>
+                            <span><i class="fas fa-chef-hat"></i> Expert Level</span>
+                        </div>
+                        <a href="#" class="read-more">Read Full Guide <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
                 <article class="blog-post">
-                    <img src="https://images.unsplash.com/photo-1602536942166-eb0e5905a769?w=400&h=250&fit=crop" alt="Lamb Recipes">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1602536942166-eb0e5905a769?w=400&h=280&fit=crop&q=80" alt="Traditional Lamb Recipes">
+                        <div class="blog-category">Recipes</div>
+                    </div>
                     <div class="blog-content">
-                        <h3>5 Delicious Lamb Recipes</h3>
-                        <p>Discover mouth-watering lamb dishes perfect for family dinners and special occasions.</p>
-                        <a href="#" class="read-more">Read More</a>
+                        <h3>5 Traditional South African Lamb Recipes</h3>
+                        <p>Discover mouth-watering lamb dishes using traditional butchery cuts and time-honored South African cooking methods and spices.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-clock"></i> 8 min read</span>
+                            <span><i class="fas fa-users"></i> Family Recipes</span>
+                        </div>
+                        <a href="#" class="read-more">Explore Recipes <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
                 <article class="blog-post">
-                    <img src="https://images.unsplash.com/photo-1588347818111-4c8190711a39?w=400&h=250&fit=crop" alt="Meat Storage">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1588347395425-2e56db050356?w=400&h=280&fit=crop&q=80" alt="Meat Aging Process">
+                        <div class="blog-category">Education</div>
+                    </div>
                     <div class="blog-content">
-                        <h3>Proper Meat Storage Tips</h3>
-                        <p>Essential guidelines for storing different types of meat to maintain freshness and quality.</p>
-                        <a href="#" class="read-more">Read More</a>
+                        <h3>Why Aged Meat Tastes Superior</h3>
+                        <p>Understanding the traditional aging process and how it enhances flavor, tenderness, and overall quality compared to mass-market alternatives.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-clock"></i> 6 min read</span>
+                            <span><i class="fas fa-graduation-cap"></i> Educational</span>
+                        </div>
+                        <a href="#" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
             </div>
@@ -239,42 +454,57 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Contact Us</h2>
+            <div class="section-header">
+                <h2><i class="fas fa-map-marker-alt"></i> Visit Us Today</h2>
+                <p>Located in the heart of New Brighton's vibrant Mbizweni Square</p>
+            </div>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Address</h3>
-                            <p>123 Butcher Street<br>Cape Town, Western Cape 8001</p>
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-details">
+                            <h3>Our Location</h3>
+                            <p>Mbizweni Square<br>New Brighton, Port Elizabeth<br>Eastern Cape, South Africa</p>
                         </div>
                     </div>
                     <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h3>Phone</h3>
-                            <p>+27 21 123 4567</p>
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-details">
+                            <h3>Call Us</h3>
+                            <p>+27 41 123 4567<br><small>We're happy to help with orders and inquiries</small></p>
                         </div>
                     </div>
                     <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email</h3>
-                            <p>info@kkbutchery.co.za</p>
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-details">
+                            <h3>Email Us</h3>
+                            <p>info@kkbutchery.co.za<br><small>For orders, catering, and general inquiries</small></p>
                         </div>
                     </div>
                     <div class="info-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h3>Operating Hours</h3>
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-details">
+                            <h3>Opening Hours</h3>
                             <p>Mon-Fri: 7:00 AM - 6:00 PM<br>
-                               Sat: 8:00 AM - 4:00 PM<br>
-                               Sun: 9:00 AM - 2:00 PM</p>
+                               Saturday: 8:00 AM - 4:00 PM<br>
+                               Sunday: 9:00 AM - 2:00 PM</p>
                         </div>
                     </div>
                 </div>
                 
                 <form class="contact-form" id="contactForm">
+                    <div class="form-header">
+                        <h3>Send us a Message</h3>
+                        <p>We'd love to hear from you</p>
+                    </div>
                     <div class="form-group">
                         <input type="text" id="name" name="name" required>
                         <label for="name">Full Name</label>
@@ -293,16 +523,19 @@
                             <option value="order">Order Inquiry</option>
                             <option value="delivery">Delivery Question</option>
                             <option value="product">Product Information</option>
-                            <option value="complaint">Complaint</option>
+                            <option value="catering">Catering Services</option>
+                            <option value="complaint">Feedback</option>
                             <option value="other">Other</option>
                         </select>
                         <label for="subject">Subject</label>
                     </div>
                     <div class="form-group">
                         <textarea id="message" name="message" rows="5" required></textarea>
-                        <label for="message">Message</label>
+                        <label for="message">Your Message</label>
                     </div>
-                    <button type="submit" class="btn-primary">Send Message</button>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
                 </form>
             </div>
         </div>
@@ -312,11 +545,22 @@
     <section class="newsletter">
         <div class="container">
             <div class="newsletter-content">
-                <h2>Stay Updated</h2>
-                <p>Subscribe to our newsletter for weekly specials and cooking tips</p>
+                <div class="newsletter-icon">
+                    <i class="fas fa-envelope-open"></i>
+                </div>
+                <h2>Stay Connected with KK Butchery</h2>
+                <p>Subscribe to our newsletter for weekly specials, traditional cooking tips, and exclusive offers from the heart of Mbizweni Square</p>
                 <form class="newsletter-form" id="newsletterForm">
-                    <input type="email" placeholder="Enter your email address" required>
-                    <button type="submit">Subscribe</button>
+                    <div class="newsletter-input">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit">
+                            <i class="fas fa-arrow-right"></i>
+                            Subscribe
+                        </button>
+                    </div>
+                    <div class="newsletter-privacy">
+                        <small><i class="fas fa-lock"></i> We respect your privacy and never spam</small>
+                    </div>
                 </form>
             </div>
         </div>
@@ -326,9 +570,9 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
+                <div class="footer-section footer-brand">
                     <h3><i class="fas fa-cut"></i> KK Butchery</h3>
-                    <p>Your trusted source for premium quality meats since establishment. We're committed to providing the best products and service to our valued customers.</p>
+                    <p>Your trusted source for premium quality meats since 1978. Located in the heart of Mbizweni Square, New Brighton, we're committed to providing the best traditional butchery service to our valued customers.</p>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -343,30 +587,38 @@
                         <li><a href="#products">Products</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#blog">Recipes</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Products</h3>
+                    <h3>Premium Products</h3>
                     <ul>
-                        <li><a href="#products">Fresh Beef</a></li>
-                        <li><a href="#products">Premium Chicken</a></li>
-                        <li><a href="#products">Lamb Cuts</a></li>
-                        <li><a href="#products">Pork Selection</a></li>
-                        <li><a href="#products">Processed Meats</a></li>
+                        <li><a href="#products">Aged Beef Cuts</a></li>
+                        <li><a href="#products">Farm Fresh Chicken</a></li>
+                        <li><a href="#products">Premium Lamb</a></li>
+                        <li><a href="#products">Quality Pork</a></li>
+                        <li><a href="#products">Artisan Sausages</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Contact Info</h3>
+                    <h3>Contact Information</h3>
                     <div class="contact-details">
-                        <p><i class="fas fa-map-marker-alt"></i> 123 Butcher Street, Cape Town</p>
-                        <p><i class="fas fa-phone"></i> +27 21 123 4567</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Mbizweni Square, New Brighton</p>
+                        <p><i class="fas fa-phone"></i> +27 41 123 4567</p>
                         <p><i class="fas fa-envelope"></i> info@kkbutchery.co.za</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 7AM-6PM</p>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 KK Butchery. All rights reserved. | Developed by SM Solutions</p>
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 KK Butchery. All rights reserved. | Crafted with <i class="fas fa-heart"></i> by SM Solutions</p>
+                    <div class="footer-badges">
+                        <span class="badge">Since 1978</span>
+                        <span class="badge">Premium Quality</span>
+                        <span class="badge">Local Pride</span>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
@@ -375,7 +627,7 @@
     <div class="modal-overlay" id="checkoutModal">
         <div class="modal">
             <div class="modal-header">
-                <h2>Checkout</h2>
+                <h2><i class="fas fa-shopping-cart"></i> Secure Checkout</h2>
                 <button class="modal-close" onclick="closeCheckoutModal()">
                     <i class="fas fa-times"></i>
                 </button>
@@ -389,13 +641,21 @@
     <!-- Loading Spinner -->
     <div class="loading-spinner" id="loadingSpinner">
         <div class="spinner"></div>
-        <p>Loading...</p>
+        <p>Processing your request...</p>
     </div>
 
     <!-- Notification Toast -->
     <div class="toast" id="toast">
-        <span class="toast-message"></span>
+        <div class="toast-content">
+            <i class="toast-icon fas fa-check-circle"></i>
+            <span class="toast-message"></span>
+        </div>
     </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
